@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServer.FactoryPatternExample", "BlazorServer.FactoryPatternExample\BlazorServer.FactoryPatternExample.csproj", "{72555A69-200D-4FD0-A1CA-D0711E7EDB00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServer.FactoryPatternExample.Tests", "BlazorServer.FactoryPatternExample.Tests\BlazorServer.FactoryPatternExample.Tests.csproj", "{43D3E2CA-80E6-4678-8267-CF1680F0E276}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72555A69-200D-4FD0-A1CA-D0711E7EDB00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72555A69-200D-4FD0-A1CA-D0711E7EDB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72555A69-200D-4FD0-A1CA-D0711E7EDB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72555A69-200D-4FD0-A1CA-D0711E7EDB00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43D3E2CA-80E6-4678-8267-CF1680F0E276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D3E2CA-80E6-4678-8267-CF1680F0E276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D3E2CA-80E6-4678-8267-CF1680F0E276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D3E2CA-80E6-4678-8267-CF1680F0E276}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76470CCC-4505-4FD8-984D-C661AD7F67B4}
+	EndGlobalSection
+EndGlobal

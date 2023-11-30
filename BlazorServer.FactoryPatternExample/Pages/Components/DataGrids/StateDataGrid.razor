@@ -1,0 +1,16 @@
+﻿@using BlazorServer.FactoryPatternExample.Domain.models
+
+<MudDataGrid @attributes='Splats.DataGrid("states")' T="State" Items="@StateList" SortMode="SortMode.Multiple" Filterable="true" QuickFilter="@QuickFilter" Hideable="true">
+    <ToolBarContent>
+        <MudText @attributes='Splats.PageHeader("states")'>States</MudText>
+        <MudSpacer />
+        <MudTextField @attributes='Splats.SearchField()' @bind-Value="_searchString" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <Columns>
+        <PropertyColumn Property="x => x.Name" Title="Name" Sortable="true" Filterable="false" InitialDirection="SortDirection.Ascending" />
+        <PropertyColumn Property="x => x.Abbreviation" Title="Abbreviation" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="State" />
+    </PagerContent>
+</MudDataGrid>

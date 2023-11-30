@@ -1,0 +1,49 @@
+﻿@page "/orderentry"
+@using BlazorServer.FactoryPatternExample.Domain.models;
+
+<MudText @attributes='Splats.PageHeader("orderentry")'>Order Entry</MudText>
+
+<MudGrid>
+    <MudItem xs="12" sm="7">
+        <MudPaper Class="pa-4">
+            <MudForm @ref="Form" @bind-IsValid="@success" @bind-Errors="@errors">
+                <MudSelect @attributes="Splats.SelectRequired(nameof(State))" T="int?" Label="States" ValueChanged="value => StateValueChange(value)">
+                    @if (StateList != null)
+                    {
+                        @foreach (var state in StateList)
+                        {
+                            <MudSelectItem T="int?" Value="@state.Id">@state.Name</MudSelectItem>
+                        }
+                    }
+                </MudSelect>
+                <MudSelect @attributes="Splats.SelectRequired(nameof(Product))" T="int?" Label="Products" ValueChanged="value => ProductValueChange(value)">
+                    @if (ProductList != null)
+                    {
+                        @foreach (var product in ProductList)
+                        {
+                            <MudSelectItem T="int?" Value="@product.Id">@product.Name</MudSelectItem>
+                        }
+                    }
+                </MudSelect>
+                <MudNumericField @attributes='Splats.NumericRequired("Quantity")' @bind-Value="NewOrder!.AmountOrder" />
+                <MudTextField @attributes='Splats.TextRequired("Name")' T="string" @bind-Value="NewOrder!.Name" />
+                <MudTextField @attributes='Splats.TextAreaRequired("Comment")' T="string" @bind-Value="NewOrder!.Comment" />
+                <MudTextField @attributes='Splats.TextAreaRequired("Description")' T="string" @bind-Value="NewOrder!.Description" />
+            </MudForm>
+        </MudPaper>
+        <MudPaper Class="pa-4 mt-4">
+            <MudButton @attributes="Splats.NewButton()" OnClick="Save">Save</MudButton>
+            <MudButton @attributes="Splats.ResetButton()" OnClick="@(()=>Form!.ResetAsync())" Class="mx-2">Reset</MudButton>
+            <MudButton @attributes="Splats.CancelButton()" OnClick="CancelClick">Cancel</MudButton>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="5">
+        <MudPaper Class="pa-4 mud-height-full">
+            <MudText Typo="Typo.subtitle2">@($"Errors ({errors.Length})")</MudText>
+            @foreach (var error in errors)
+            {
+                <MudText Color="@Color.Error">@error</MudText>
+            }
+        </MudPaper>
+    </MudItem>
+</MudGrid>

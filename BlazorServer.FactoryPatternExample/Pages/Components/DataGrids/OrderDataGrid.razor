@@ -1,0 +1,20 @@
+﻿@using BlazorServer.FactoryPatternExample.Domain.models
+
+<MudDataGrid @attributes='Splats.DataGrid("orders")' T="Order" Items="@OrderList" SortMode="SortMode.Multiple" Filterable="true" QuickFilter="@QuickFilter" Hideable="true">
+    <ToolBarContent>
+        <MudText @attributes='Splats.PageHeader("orders")'>Orders</MudText>
+        <MudSpacer />
+        <MudTextField @attributes='Splats.SearchField()' @bind-Value="_searchString" Class="mt-0 mr-2"></MudTextField>
+        <MudButton @attributes="Splats.NewButton()" class="ml-2" OnClick="CreateOrder">Create Order</MudButton>
+    </ToolBarContent>
+    <Columns>
+        <PropertyColumn Property="x => x.Product!.Name" Title="Product" Sortable="true" Filterable="false" InitialDirection="SortDirection.Ascending" />
+        <PropertyColumn Property="x => x.State!.Name" Title="State" />
+        <PropertyColumn Property="x => x.AmountOrder" Title="Quantity" />
+        <PropertyColumn Property="x => x.ShippingCost" Title="Shipping Cost" />
+        <PropertyColumn Property="x => x.Total" Title="Total Cost" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Order" />
+    </PagerContent>
+</MudDataGrid>
